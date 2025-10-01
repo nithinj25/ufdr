@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-export default function SearchBar({ onSearch }: { onSearch?: (q: string) => void }) {
+interface SearchBarProps {
+  onSearch?: (query: string) => void;
+}
+
+export default function SearchBar({ onSearch }: SearchBarProps) {
   const [q, setQ] = useState("");
   return (
     <div className="flex items-center gap-2">

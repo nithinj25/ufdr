@@ -1,7 +1,10 @@
-import React from "react";
 import type { Evidence } from "../types";
 
-export default function MediaViewer({ item }: { item: Evidence | null }) {
+interface MediaViewerProps {
+  item: Evidence;
+}
+
+export default function MediaViewer({ item }: MediaViewerProps) {
   if (!item) return null;
 
   if (item.type === "image") {

@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function Login(){
+export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[var(--bg)]">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow">
