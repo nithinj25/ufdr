@@ -15,6 +15,22 @@ export default function Topbar() {
   const [toast, setToast] = useState<ToastMessage | null>(null);
   const navigate = useNavigate();
 
+  const runQuery = async (query: string) => {
+    try {
+      await client.search(query);
+      setToast({
+        message: 'Query processed successfully',
+        type: 'success'
+      });
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Failed to process query';
+      setToast({
+        message: errorMessage,
+        type: 'error'
+      });
+    }
+  };
+
   return (
     <header className="relative flex items-center justify-between gap-4 p-3 px-4 bg-slate-900/80 backdrop-blur-xl border-b border-cyan-500/20 sticky top-0 z-50 overflow-hidden">
       {/* Subtle background grid like Landing */}
@@ -38,17 +54,9 @@ export default function Topbar() {
       <div className="flex items-center gap-4">
         <button 
           onClick={() => {
-            client.query(q).then(response => {
-              setToast({
-                message: 'Query processed successfully',
-                type: 'success'
-              });
-            }).catch(error => {
-              setToast({
-                message: error.message || 'Failed to process query',
-                type: 'error'
-              });
-            });
+            if (q.trim()) {
+              runQuery(q);
+            }
           }}
           className="px-4 py-2 rounded bg-cyan-400 hover:bg-cyan-500 text-slate-900 font-medium"
         >
