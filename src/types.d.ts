@@ -8,8 +8,10 @@ export type Evidence = {
 export type CaseItem = {
   id: string;
   title: string;
+  name?: string;
   description?: string;
   createdAt: string;
+  updatedAt?: string;
   suspects?: string[];
   evidences?: Evidence[];
 };

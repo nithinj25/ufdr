@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+
+import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { client } from "../lib/api";
 import EvidenceViewer from "../components/EvidenceViewer";
