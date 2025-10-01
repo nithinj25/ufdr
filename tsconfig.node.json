@@ -1,23 +1,13 @@
 {
   "compilerOptions": {
+    "composite": true,
     "target": "ES2022",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": ["ES2022"],
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "jsx": "react-jsx",
-    "strict": true,
-    "noEmit": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-
-    /* Key option that removes imports used only for types */
-    "importsNotUsedAsValues": "remove",
-
-    /* Useful when using types-only modules */
-    "preserveConstEnums": true,
+    "strict": true,
+    "esModuleInterop": true,
     "resolveJsonModule": true
   },
   "include": ["vite.config.ts"]
